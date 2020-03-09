@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+
+
+
+
+<hibernate-mapping>
+    <joined-subclass name="modelo.Empleado" extends="modelo.Persona"  lazy="false"  table="EMPLEADO">
+        <key column="IDPERSONA" />
+        
+        <many-to-one name="areaTrabajo" 
+        column="IdArea" 
+        not-null="false" cascade="save-update"/>
+       
+        <list name="turnosAtendidos" inverse="false"   cascade="save-update" >
+	<key column="IDPERSONA"/>
+	<list-index column="idxturnosEmpleado"/>
+        <one-to-many class="modelo.Turno"/></list>
+ 
+         <list name="tipostramites" inverse="false"   table="Empleado_TipoTramite"  cascade="save-update">
+		<key column="IDPERSONA" />
+		<list-index column="idxtipotramiteEmpleado"/>
+		<many-to-many class="modelo.TipoTramite"/>
+        </list>
+        
+        
+        
+        
+    </joined-subclass>
+</hibernate-mapping>
+
+
+
+

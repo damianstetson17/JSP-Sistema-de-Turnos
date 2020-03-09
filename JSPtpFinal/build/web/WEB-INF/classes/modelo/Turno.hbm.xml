@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="modelo.Turno" table="Turno"><!-- schema="public" optimistic-lock="version" -->
+    <id name="IdTurno" column="ID_TURNO"   type="long"> <generator class="native" /> </id>
+    
+    <property name="nroTurno" column="NROTURNO" type="integer"> </property>
+    <property name="fechaSolicitud" column="FECHASOLICITUD" type="date">  </property>
+    <property name="fechaInicioAtencion" column="FECHAINICIOATENCION" type="date"> </property>
+    <property name="fechaFinAtencion" column="FECHAFINTENCION" type="date">  </property>
+   
+   
+    <many-to-one name="estado" 
+        column="IdEstadoTurno" class="modelo.EstadoTurno"
+        not-null="true"    cascade="save-update"/>
+
+     <many-to-one name="prioridad" 
+        column="idPrioridad" class="modelo.Prioridad"
+        not-null="true"   cascade="save-update"/>
+     
+    
+     
+    <list name="tramites"   inverse="false"   cascade="save-update">
+	<key column="IdTurno"/>
+	<list-index column="idxTramiteTurno"/>
+    <one-to-many class="modelo.Tramite"/></list>
+    
+    
+  </class>
+</hibernate-mapping> 
+

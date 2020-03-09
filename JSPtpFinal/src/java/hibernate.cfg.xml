@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+    <property name="connection.url">jdbc:mysql://localhost:3306/ange</property>
+    <property name="connection.username">root</property>
+    <property name="connection.password">154221488</property>
+    <property name="connection.pool_size">1</property>
+    <property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>
+    <property name="current_session_context_class">thread</property>
+    <property name="cache.provider_class">org.hibernate.cache.NoCacheProvider</property>
+    <property name="show_sql">true</property>
+    <property name="hbm2ddl.auto">update</property>
+    <!--property name="hbm2ddl.auto">create validate</property-->
+    <mapping resource="modelo/Area.hbm.xml"/>
+    <mapping resource="modelo/Cliente.hbm.xml"/>
+    <mapping resource="modelo/Empleado.hbm.xml"/>
+    <mapping resource="modelo/EstadoTurno.hbm.xml"/>
+    <mapping resource="modelo/Persona.hbm.xml"/>
+    <mapping resource="modelo/Requisito.hbm.xml"/>
+    <mapping resource="modelo/Prioridad.hbm.xml"/>
+    <mapping resource="modelo/Supervisor.hbm.xml"/>
+    <mapping resource="modelo/TipoTramite.hbm.xml"/>
+    <mapping resource="modelo/Tramite.hbm.xml"/>
+    <mapping resource="modelo/Turno.hbm.xml"/>
+    <mapping resource="modelo/Usuario.hbm.xml"/>
+  </session-factory>
+</hibernate-configuration>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+
+<hibernate-mapping>
+    <joined-subclass name="modelo.Supervisor" extends="modelo.Persona"  lazy="false"  table="SUPERVISOR">
+    	  <key column="IDPERSONA" />
+        
+       
+     <many-to-one name="areaAgregar" 
+        column="IdArea" 
+        unique="true"
+        not-null="false" cascade="save-update"/>
+       
+        
+    </joined-subclass>
+</hibernate-mapping>
+
+
+
+
+
+
+
+

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+        <joined-subclass name="modelo.Cliente" extends="modelo.Persona"  lazy="false"  table="CLIENTE">
+    	  <key column="IDPERSONA" />
+          
+          <property name="activo" column="ACTIVO" type="boolean">  </property>
+
+         <many-to-one name="usuario" 
+             column="IdUsuario" 
+             unique="true"
+             not-null="false "  cascade="save-update"/>
+       
+        
+
+        <list name="turnos"   inverse="false"   cascade="save-update">
+	<key column="IDPERSONA"/>
+	<list-index column="idxTurnosCliente"/>
+         <one-to-many class="modelo.Turno"/></list>
+        
+    </joined-subclass>
+</hibernate-mapping>
+
+
+
+
+

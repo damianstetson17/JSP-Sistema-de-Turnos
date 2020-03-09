@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+  <class name="modelo.Prioridad" table="Prioridad"><!-- schema="public" optimistic-lock="version" -->
+    <id name="idPrioridad" column="ID_PRIORIDAD"   type="long"> <generator class="native" /> </id>
+    
+    
+    <property name="nombrePrioridad" column="NOMBREPRIORIDAD" type="string">  </property>
+    <property name="nivelPrioridad" column="NIVELPRIORIDAD" type="integer">   </property>
+    <property name="activo" column="ACTIVO" type="boolean">     </property>
+  </class>
+</hibernate-mapping>

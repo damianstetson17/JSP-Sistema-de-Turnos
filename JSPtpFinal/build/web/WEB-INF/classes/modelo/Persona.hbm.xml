@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+    <hibernate-mapping>
+    <class name="modelo.Persona" table="PERSONA" abstract="true">
+        <id name="idPersona" column="IDPERSONA"   type="long"> <generator class="native" /> </id>
+        
+        <property generated="never" lazy="false" name="nombre" column="NOMBRE" type="string">       </property>
+        <property generated="never" lazy="false" name="apellido" column="APELLIDO" type="string">    </property>
+        <property generated="never" lazy="false" name="dni" column="DNI" type="long">       </property>
+        <property generated="never" lazy="false" name="activo" column="ACTIVO" type="boolean">       </property>
+        
+        
+       </class>
+</hibernate-mapping>

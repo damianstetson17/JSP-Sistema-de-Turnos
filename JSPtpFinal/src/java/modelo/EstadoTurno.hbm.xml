@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="modelo.EstadoTurno" table="EstadoTurno"><!-- schema="public" optimistic-lock="version" -->
+    <id name="IdEstadoTurno" column="ID_ESTADOTURNO"   type="long"> <generator class="native" /> </id>
+    <property name="nombreEstado" column="NOMBREESTADO" type="string">    </property>
+   <property name="activo" column="ACTIVO" type="boolean">     </property>
+  </class>
+</hibernate-mapping>

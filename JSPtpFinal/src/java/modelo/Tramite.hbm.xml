@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+  <class name="modelo.Tramite" table="Tramite"> <!-- schema="public" optimistic-lock="version" -->
+    <id name="IdTramite" column="ID_TRAMITE"   type="long"> <generator class="native" /> </id>
+     
+    <property name="nroTramite" column="NROTRAMITE" type="integer">    </property>
+    <property name="activo" column="ACTIVO" type="boolean">     </property>
+    <property name="nombreTramite" column="NOMBRETRAMITE" type="string">  </property>
+     
+    <many-to-one name="tipoTramite" 
+        column="IdTipoTramite"
+        not-null="true"   cascade="save-update"/>
+    
+      
+    <list name="requisitosObligatorios" inverse="false"   table="Tramite_Requisito"  cascade="save-update">
+	<key column="ID_TRAMITE" />
+	<list-index column="idxRequisitoTramite"/>
+	<many-to-many class="modelo.Requisito"/>
+    </list>
+    
+    
+  </class>
+</hibernate-mapping>
