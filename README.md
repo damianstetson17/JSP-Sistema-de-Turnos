@@ -1,6 +1,6 @@
 # Sistema de turnos en JSP
 ## ¿Qué hace?
-Sistema de turnos que perite al cliente:
+Sistema de turnos que permite al cliente:
 * Registrar cliente.
 * Ver sus turnos.
 * Consultar turnos.
